@@ -14,7 +14,12 @@
                 --font-primary: 'Space Mono', monospace;
                 --font-secondary: 'Inter', sans-serif;
             }
-     
+             
+            html, body {
+                height: 100%;
+                overflow-x: hidden;
+                overflow-y: auto;
+              }
      
             body {
                 font-family: var(--font-secondary);
@@ -237,46 +242,49 @@
         </style>
      </head>
 <body class="bg-base text-primary">
-<div class="flex flex-col min-h-screen h-auto">
-<main class="flex-grow overflow-y-auto">
+  <div class="flex flex-col min-h-screen h-auto">
 
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-base bg-opacity-80 backdrop-blur-md border-b border-soft">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16 md:h-20">
+          <a href="#" class="text-2xl font-header font-bold text-highlight">KickoffList</a>
+          <nav class="hidden md:flex items-center space-x-6 text-sm">
+            <a href="#about" class="text-secondary hover:text-accent-custom transition-colors">About</a>
+            <a href="#services" class="text-secondary hover:text-accent-custom transition-colors">Services</a>
+            <a href="#process" class="text-secondary hover:text-accent-custom transition-colors">Our Process</a>
+            <a href="#pricing" class="text-secondary hover:text-accent-custom transition-colors">Pricing</a>
+            <a href="#faq" class="text-secondary hover:text-accent-custom transition-colors">FAQ</a>
+            <a href="https://app.youform.com/forms/9xnmb2lx" target="_blank" rel="noopener noreferrer"
+               class="cta-button boxy cta-accent-secondary px-4 py-2 text-xs">Contact Us</a>
+          </nav>
+          <div class="md:hidden">
+            <button id="mobile-menu-button" class="text-highlight focus:outline-none">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M4 6h16M4 12h16m-7 6h7"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
 
-   <!-- Header -->
-   <header class="fixed top-0 left-0 right-0 z-50 bg-base bg-opacity-80 backdrop-blur-md border-b border-soft">
-       <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-           <div class="flex justify-between items-center h-16 md:h-20">
-               <a href="#" class="text-2xl font-header font-bold text-highlight">KickoffList</a>
-               <nav class="hidden md:flex items-center space-x-6 text-sm">
-                   <a href="#about" class="text-secondary hover:text-accent-custom transition-colors">About</a>
-                   <a href="#services" class="text-secondary hover:text-accent-custom transition-colors">Services</a>
-                   <a href="#process" class="text-secondary hover:text-accent-custom transition-colors">Our Process</a>
-                   <a href="#pricing" class="text-secondary hover:text-accent-custom transition-colors">Pricing</a>
-                   <a href="#faq" class="text-secondary hover:text-accent-custom transition-colors">FAQ</a>
-                   <a href="https://app.youform.com/forms/9xnmb2lx" target="_blank" rel="noopener noreferrer" class="cta-button boxy cta-accent-secondary px-4 py-2 text-xs">Contact Us</a>
-               </nav>
-               <div class="md:hidden">
-                   <button id="mobile-menu-button" class="text-highlight focus:outline-none">
-                       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-                   </button>
-               </div>
-           </div>
-       </div>
-<!-- Mobile Menu -->
-
-    <nav id="mobile-menu" class="transition-all duration-300 md:hidden hidden flex flex-col space-y-4 px-4 py-6 bg-panel border-t border-soft">
-        <a href="#about" class="text-secondary hover:text-accent-custom transition-colors">About</a>
-        <a href="#services" class="text-secondary hover:text-accent-custom transition-colors">Services</a>
-        <a href="#process" class="text-secondary hover:text-accent-custom transition-colors">Our Process</a>
-        <a href="#pricing" class="text-secondary hover:text-accent-custom transition-colors">Pricing</a>
-        <a href="#faq" class="text-secondary hover:text-accent-custom transition-colors">FAQ</a>
-        <a href="https://app.youform.com/forms/9xnmb2lx" target="_blank" rel="noopener noreferrer" class="cta-button boxy cta-accent-secondary px-4 py-2 text-xs">Contact Us</a>
+    <!-- Mobile Menu -->
+    <nav id="mobile-menu"
+         class="transition-all duration-300 md:hidden hidden flex flex-col space-y-4 px-4 py-6 bg-panel border-t border-soft mt-16">
+      <a href="#about" class="text-secondary hover:text-accent-custom transition-colors">About</a>
+      <a href="#services" class="text-secondary hover:text-accent-custom transition-colors">Services</a>
+      <a href="#process" class="text-secondary hover:text-accent-custom transition-colors">Our Process</a>
+      <a href="#pricing" class="text-secondary hover:text-accent-custom transition-colors">Pricing</a>
+      <a href="#faq" class="text-secondary hover:text-accent-custom transition-colors">FAQ</a>
+      <a href="https://app.youform.com/forms/9xnmb2lx" target="_blank" rel="noopener noreferrer"
+         class="cta-button boxy cta-accent-secondary px-4 py-2 text-xs">Contact Us</a>
     </nav>
-    
 
-
-
-
-   <!-- 1. Hero Section -->
+    <!-- Main Content -->
+    <main class="flex-grow pt-24 overflow-y-auto">
+        <!-- 1. Hero Section -->
    <section id="hero" class="min-h-screen flex items-center pt-20 md:pt-24 bg-base relative overflow-hidden">
        <div class="absolute inset-0 z-0 opacity-[0.02]" style="background-image: linear-gradient(var(--accent-color) 1px, transparent 1px), linear-gradient(90deg, var(--accent-color) 1px, transparent 1px); background-size: 30px 30px;"></div>
        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
@@ -560,9 +568,12 @@
            </div>
        </div>
    </section>
+      <!-- Dummy Scroll Content -->
+      <div class="h-[2500px] bg-gradient-to-b from-panel-light to-panel"></div>
+    </main>
 
-
- <!-- Footer -->
+    <!-- Footer -->
+  <!-- Footer -->
  <footer id="contact" class="py-16 bg-panel border-t border-soft">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid md:grid-cols-3 gap-8 mb-12">
@@ -612,103 +623,27 @@
         </div>
     </div>
 </footer>
+  </div>
 
+  <!-- Scripts -->
+  <script>
+    // Mobile Menu Toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileMenuButton && mobileMenu) {
+      mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
 
-   <script>
-       // Smooth scroll for anchor links
-       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-           anchor.addEventListener('click', function (e) {
-               e.preventDefault();
-               const targetId = this.getAttribute('href');
-               // Check if it's an external link (like the Contact Us button which now goes to youform)
-               if (targetId.startsWith('http')) {
-                   window.open(targetId, '_blank');
-                   return;
-               }
-               const targetElement = document.querySelector(targetId);
-               if (targetElement) {
-                   const headerOffset = document.querySelector('header').offsetHeight || 80;
-                   const elementPosition = targetElement.getBoundingClientRect().top;
-                   const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-                   window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
-               }
-           });
-       });
-
-
-       // Scroll Reveal Animation
-       const scrollElements = document.querySelectorAll('.scroll-reveal');
-       const elementInView = (el, dividend = 1) => {
-           const elementTop = el.getBoundingClientRect().top;
-           return ( elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend );
-       };
-       const displayScrollElement = (element) => element.classList.add('visible');
-       const handleScrollAnimation = () => scrollElements.forEach((el) => { if (elementInView(el, 1.05)) displayScrollElement(el); });
-       window.addEventListener('scroll', handleScrollAnimation);
-       handleScrollAnimation();
-
-
-       // AI Chat Typing Animation
-       const aiAnswerElement = document.getElementById('ai-answer');
-       const aiAnswerText = "KickoffList. We specialize in LLM SEO to get your SaaS noticed by AI.";
-       let charIndex = 0;
-       function typeAiAnswer() {
-           if (aiAnswerElement && charIndex < aiAnswerText.length) {
-               aiAnswerElement.textContent += aiAnswerText.charAt(charIndex++);
-               setTimeout(typeAiAnswer, 60);
-           } else if (aiAnswerElement) {
-               aiAnswerElement.classList.remove('typing-cursor');
-           }
-       }
-       const aiChatSection = document.getElementById('ai-chat');
-       let animationStarted = false;
-       const observer = new IntersectionObserver((entries) => {
-           entries.forEach(entry => {
-               if (entry.isIntersecting && !animationStarted) {
-                   if(aiAnswerElement){
-                       aiAnswerElement.classList.add('typing-cursor');
-                       setTimeout(typeAiAnswer, 500);
-                       animationStarted = true;
-                   }
-               }
-           });
-       }, { threshold: 0.5 });
-       if (aiChatSection) observer.observe(aiChatSection);
-      
-       // Set current year in footer
-       const currentYearEl = document.getElementById('currentYear');
-       if (currentYearEl) currentYearEl.textContent = new Date().getFullYear();
-
-
-       // Mobile Menu Toggle
-       const mobileMenuButton = document.getElementById('mobile-menu-button');
-       const mobileMenu = document.getElementById('mobile-menu');
-       if (mobileMenuButton && mobileMenu) {
-           mobileMenuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
-           mobileMenu.querySelectorAll('a').forEach(link => {
-               link.addEventListener('click', () => {
-                   // Only close if it's an internal anchor link
-                   if (link.getAttribute('href').startsWith('#')) {
-                       mobileMenu.classList.add('hidden');
-                   }
-               });
-           });
-       }
-
-
-       // FAQ Accordion
-       const faqItems = document.querySelectorAll('.faq-item');
-       faqItems.forEach(item => {
-           const question = item.querySelector('.faq-question');
-           question.addEventListener('click', () => {
-               faqItems.forEach(otherItem => { if (otherItem !== item) otherItem.classList.remove('active'); });
-               item.classList.toggle('active');
-           });
-       });
-   </script>
-      </main>
-    </div>
+    // Set current year in footer
+    const yearSpan = document.getElementById('currentYear');
+    if (yearSpan) {
+      yearSpan.textContent = new Date().getFullYear();
+    }
+  </script>
 </body>
+
 </html>
 
 
